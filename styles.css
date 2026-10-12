@@ -1,16 +1,28 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    gap: 20px;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(16, 25px);
-    grid-template-rows: repeat(16, 25px);
+
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+
+    width: 418px;
+    height: 418px;
     gap: 2px;
     background-color: #ccc;
     padding: 2px;
@@ -18,8 +30,6 @@ body {
 }
 
 .cell {
-    width: 25px;
-    height: 25px;
     background-color: white;
     border: 1px solid #eee;
 }
