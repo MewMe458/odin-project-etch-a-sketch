@@ -33,7 +33,3 @@ body {
     background-color: white;
     border: 1px solid #eee;
 }
-
-.cell.active {
-    background-color: #333;
-}

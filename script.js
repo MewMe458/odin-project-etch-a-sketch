@@ -1,6 +1,14 @@
 const container = document.getElementById('grid-container');
 const resetBtn = document.getElementById('reset-button');
 
+// Helper function to generate a random RGB color
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 function createGrid(size) {
     container.innerHTML = '';
 
@@ -13,7 +21,8 @@ function createGrid(size) {
         cell.classList.add('cell');
 
         cell.addEventListener('mouseenter', () => {
-            cell.classList.add('active');
+            // Instead of adding a class, set a random RGB background color
+            cell.style.backgroundColor = getRandomColor();
         });
 
         container.appendChild(cell);
